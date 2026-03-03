@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de catálogo da loja Fashion Store consumindo Platzi Fake API.">
+  <title>Fashion Store - Catálogo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+
+<body>
+  <header class="glass-header">
+    <div class="logo">Fashion Store<span>.</span></div>
+    <nav style="align-items: center;">
+      <a href="index.html" id="nav-home">Início</a>
+      <a href="menu.html" class="active" id="nav-menu">Catálogo</a>
+      <button id="theme-toggle" class="btn-theme" aria-label="Alternar Tema" onclick="if(typeof toggleTheme==='function') toggleTheme()">🌓</button>
+    </nav>
+  </header>
+  <main class="page-content">
+    <section class="menu-section">
+      <div class="section-header">
+        <h2>Nosso Catálogo Completo</h2>
+        <div class="filters">
+          <select id="category-filter" aria-label="Filtrar por Categoria" onchange="if(typeof filterProducts==='function') filterProducts(this.value)">
+            <option value="">Todas as Categorias</option>
+            <!-- Options injected by app.js -->
+          </select>
+        </div>
+      </div>
+      <div id="products-list" class="grid-container">
+        <article class="card placeholder-card">
+          <div class="card-img-wrapper">
+            <img src="https://placehold.co/600x400/1e293b/6366f1?text=Carregando" alt="Loading" class="card-img">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Carregando</span>
+            <h3 class="card-title">Aguardando API...</h3>
+            <div class="card-footer">
+              <span class="card-price">R$ 0,00</span>
+              <a href="#" class="btn-primary btn-small">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 Avaliação Prática - Fashion Store (Powered by Platzi Fake Store API)</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

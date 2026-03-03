@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de detalhes de um produto consumindo Platzi Fake API.">
+  <title>Fashion Store - Detalhes do Produto</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+
+<body>
+  <header class="glass-header">
+    <div class="logo">Fashion Store<span>.</span></div>
+    <nav style="align-items: center;">
+      <a href="index.html" id="nav-home">Início</a>
+      <a href="menu.html" id="nav-menu">Catálogo</a>
+      <button id="theme-toggle" class="btn-theme" aria-label="Alternar Tema" onclick="if(typeof toggleTheme==='function') toggleTheme()">🌓</button>
+    </nav>
+  </header>
+  <main class="page-content details-page">
+    <a href="menu.html" class="back-link" aria-label="Voltar para catálogo">&larr; Voltar para o Catálogo</a>
+    <div id="product-detail" class="detail-container">
+      <img src="https://placehold.co/600x400/1e293b/6366f1?text=Carregando" alt="Loading" class="detail-img">
+      <div class="detail-info">
+        <span class="card-category" style="font-size:1rem; margin-bottom:1rem; display:block;">Categoria: Aguardando...</span>
+        <h1>Carregando Produto...</h1>
+        <div class="detail-price">R$ 0,00</div>
+        <p class="detail-description">As informações do produto estão sendo carregadas através da API. Por favor, aguarde alguns instantes.</p>
+        <button class="btn-primary" disabled>Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Avaliação Prática - Fashion Store (Powered by Platzi Fake Store API)</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
